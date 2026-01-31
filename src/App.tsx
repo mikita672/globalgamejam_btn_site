@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SearchPage />} />
         <Route path="/translate" element={<TranslatorPage />} />
-        <Route path="/wordle" element={<WordlePage />} />
+        <Route path="/maskle" element={<WordlePage />} />
       </Routes>
     </BrowserRouter>
   );
