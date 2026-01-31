@@ -153,13 +153,13 @@
     }
 
     .tree-1 {
-        left: -10%;
-        width: 120px;
+        bottom: -5%;
+        width: 250px;
     }
 
     .tree-2 {
         right: -5%;
-        width: 100px;
+        width: 250px;
     }
 
     .tree-3 {
@@ -167,28 +167,61 @@
     }
 
     .bush-1 {
-        left: 5%;
-        width: 90px;
+        left: 10%;
+        bottom: -12%;
+        width: 200px;
     }
 
     .bush-2 {
-        right: 5%;
-        width: 80px;
+        bottom: -10%;
+        right: 10%;
+        width: 200px;
     }
 }
 
 @media (max-width: 480px) {
-    .search-content {
-        padding: 15px;
+    .search-title {
+        margin-bottom: 1.5rem;
     }
 
-    .tree-1,
+    .search-form {
+        gap: 0.75rem;
+    }
+
+    .search-input {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+
+    .search-button {
+        padding: 12px 36px;
+        font-size: 1rem;
+    }
+
+    .tree-1 {
+        bottom: -5%;
+        width: 250px;
+    }
+
     .tree-2 {
-        width: 80px;
+        right: -12%;
+        width: 300px;
+        bottom: -5%;
     }
 
-    .bush-1,
+    .tree-3 {
+        display: none;
+    }
+
+    .bush-1 {
+        left: -10%;
+        bottom: -12%;
+        width: 200px;
+    }
+
     .bush-2 {
-        width: 60px;
+        bottom: -10%;
+        right: -5%;
+        width: 200px;
     }
 }
