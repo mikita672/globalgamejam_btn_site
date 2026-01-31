@@ -1,0 +1,349 @@
+.wordle-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.wordle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  padding: 20px;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.wordle-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 0 #ddd;
+  letter-spacing: 2px;
+}
+
+.mask-character-wordle {
+  margin-bottom: 1rem;
+}
+
+.mask-character-wordle img {
+  width: 120px;
+  filter: grayscale(100%) contrast(1.2);
+}
+
+.game-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.game-grid.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.grid-row {
+  display: flex;
+  gap: 8px;
+}
+
+.tile {
+  width: clamp(50px, 12vw, 62px);
+  height: clamp(50px, 12vw, 62px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "ObfuscatedFont", sans-serif;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: bold;
+  color: #1a1a1a;
+  background: #fff;
+  border: 3px solid #1a1a1a;
+  border-radius: 15px 5px 15px 5px / 5px 15px 5px 15px;
+  box-shadow: 3px 3px 0 #1a1a1a;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.tile.current {
+  border-color: #666;
+  box-shadow: 4px 4px 0 #666;
+}
+
+.tile.correct {
+  background: #6aaa64;
+  border-color: #538d4e;
+  color: #fff;
+  box-shadow: 3px 3px 0 #3a5c3a;
+}
+
+.tile.present {
+  background: #c9b458;
+  border-color: #b59f3b;
+  color: #fff;
+  box-shadow: 3px 3px 0 #8b7a2a;
+}
+
+.tile.absent {
+  background: #787c7e;
+  border-color: #5a5c5d;
+  color: #fff;
+  box-shadow: 3px 3px 0 #3a3c3d;
+}
+
+.game-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 16px 24px;
+  border: 3px solid #1a1a1a;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: #fff;
+  box-shadow: 4px 4px 0 #1a1a1a;
+}
+
+.win-message {
+  font-size: 1.5rem;
+  color: #6aaa64;
+  margin: 0;
+}
+
+.lose-message {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.secret-word {
+  font-family: "ObfuscatedFont", sans-serif;
+  font-weight: bold;
+}
+
+.play-again-button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #fff;
+  background: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #888;
+  transition: all 0.2s ease;
+}
+
+.play-again-button:hover {
+  background: #333;
+  box-shadow: 5px 5px 0 #666;
+  transform: translate(-2px, -2px);
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.key {
+  min-width: clamp(28px, 7vw, 43px);
+  height: clamp(50px, 10vw, 58px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-weight: bold;
+  color: #1a1a1a;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 8px 3px 8px 3px / 3px 8px 3px 8px;
+  box-shadow: 2px 2px 0 #1a1a1a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+}
+
+.key:hover {
+  background: #f0f0f0;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #1a1a1a;
+}
+
+.key:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #1a1a1a;
+}
+
+.key.wide-key {
+  min-width: clamp(50px, 12vw, 65px);
+  font-size: clamp(0.65rem, 2vw, 0.8rem);
+}
+
+.key.correct {
+  background: #6aaa64;
+  border-color: #538d4e;
+  color: #fff;
+}
+
+.key.present {
+  background: #c9b458;
+  border-color: #b59f3b;
+  color: #fff;
+}
+
+.key.absent {
+  background: #787c7e;
+  border-color: #5a5c5d;
+  color: #fff;
+}
+
+.back-button {
+  padding: 12px 36px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #fff;
+  background: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #888;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #333;
+  box-shadow: 6px 6px 0 #666;
+  transform: translate(-2px, -2px);
+}
+
+.back-button:active {
+  box-shadow: 2px 2px 0 #888;
+  transform: translate(2px, 2px);
+}
+
+.decorative-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.decorative-element {
+  position: absolute;
+  filter: grayscale(100%) contrast(1.2);
+  opacity: 0.9;
+}
+
+.tree-1 {
+  bottom: -5%;
+  left: -2%;
+  width: clamp(120px, 15vw, 200px);
+  transform: rotate(-5deg);
+}
+
+.tree-2 {
+  bottom: -3%;
+  right: 5%;
+  width: clamp(100px, 14vw, 180px);
+  transform: rotate(8deg);
+}
+
+.bush-1 {
+  bottom: -10%;
+  left: 15%;
+  width: clamp(80px, 12vw, 150px);
+  transform: rotate(3deg);
+}
+
+.bush-2 {
+  bottom: -12%;
+  right: 15%;
+  width: clamp(70px, 11vw, 130px);
+  transform: rotate(-4deg);
+}
+
+@media (max-width: 480px) {
+  .wordle-content {
+    padding: 15px;
+    padding-top: 25px;
+  }
+
+  .wordle-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .mask-character-wordle img {
+    width: 80px;
+  }
+
+  .game-grid {
+    gap: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .grid-row {
+    gap: 5px;
+  }
+
+  .tile {
+    border-width: 2px;
+    box-shadow: 2px 2px 0 #1a1a1a;
+  }
+
+  .keyboard {
+    gap: 5px;
+  }
+
+  .keyboard-row {
+    gap: 4px;
+  }
+
+  .key {
+    border-width: 1.5px;
+    box-shadow: 1px 1px 0 #1a1a1a;
+  }
+
+  .game-message {
+    padding: 12px 16px;
+  }
+
+  .back-button {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}

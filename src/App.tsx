@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SearchPage from "./SearchPage";
 import TranslatorPage from "./TranslatorPage";
+import WordlePage from "./WordlePage";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SearchPage />} />
         <Route path="/translate" element={<TranslatorPage />} />
+        <Route path="/wordle" element={<WordlePage />} />
       </Routes>
     </BrowserRouter>
   );
