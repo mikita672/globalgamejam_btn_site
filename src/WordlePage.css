@@ -291,28 +291,28 @@
 }
 
 .tree-1 {
-    bottom: -5%;
+    bottom: 0;
     left: -2%;
     width: clamp(120px, 15vw, 200px);
     transform: rotate(-5deg);
 }
 
 .tree-2 {
-    bottom: -3%;
+    bottom: 0;
     right: 5%;
     width: clamp(100px, 14vw, 180px);
     transform: rotate(8deg);
 }
 
 .bush-1 {
-    bottom: -10%;
+    bottom: 0;
     left: 15%;
     width: clamp(80px, 12vw, 150px);
     transform: rotate(3deg);
 }
 
 .bush-2 {
-    bottom: -12%;
+    bottom: 0;
     right: 15%;
     width: clamp(70px, 11vw, 130px);
     transform: rotate(-4deg);
