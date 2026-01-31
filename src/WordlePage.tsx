@@ -24,6 +24,8 @@ const KEYBOARD_ROWS = [
     ["ENTER", "Z", "X", "C", "V", "B", "N", "M", "⌫"],
 ];
 
+const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
 type LetterState = "correct" | "present" | "absent" | "empty";
 
 interface TileData {
@@ -55,6 +57,7 @@ function WordlePage() {
     const navigate = useNavigate();
     const [secretWord, setSecretWord] = useState<string>("");
     const [loading, setLoading] = useState(true);
+    const [showDictionary, setShowDictionary] = useState(false);
     const [guesses, setGuesses] = useState<TileData[][]>(
         Array(MAX_GUESSES)
             .fill(null)
@@ -227,6 +230,39 @@ function WordlePage() {
 
     return (
         <div className="wordle-page">
+            <button
+                className="dictionary-button"
+                onClick={() => setShowDictionary(true)}
+                title="Dictionary"
+            >
+                📖
+            </button>
+
+            {showDictionary && (
+                <div className="dictionary-overlay" onClick={() => setShowDictionary(false)}>
+                    <div className="dictionary-popup" onClick={(e) => e.stopPropagation()}>
+                        <div className="dictionary-header">
+                            <h2 className="dictionary-title">Dictionary</h2>
+                            <button
+                                className="dictionary-close"
+                                onClick={() => setShowDictionary(false)}
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <div className="dictionary-grid">
+                            {ALPHABET.map((letter) => (
+                                <div key={letter} className="dictionary-item">
+                                    <span className="dict-normal">{letter}</span>
+                                    <span className="dict-arrow">→</span>
+                                    <span className="dict-obfuscated">{letter}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="decorative-elements">
                 <img src={tree1} alt="" className="decorative-element tree-1" />
                 <img src={tree2} alt="" className="decorative-element tree-2" />
