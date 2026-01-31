@@ -8,6 +8,7 @@ import tree1 from "./assets/Tree1.png";
 import tree2 from "./assets/Tree3.png";
 import bush1 from "./assets/Bush_1.png";
 import bush2 from "./assets/Bush_2.png";
+import bookIcon from "./assets/book.png";
 import mask1 from "./assets/Mask_recharge_1.png";
 import mask2 from "./assets/Mask_recharge_2.png";
 import mask3 from "./assets/Mask_recharge_3.png";
@@ -235,7 +236,7 @@ function WordlePage() {
                 onClick={() => setShowDictionary(true)}
                 title="Dictionary"
             >
-                📖
+                <img src={bookIcon} alt="Dictionary" className="dictionary-icon" />
             </button>
 
             {showDictionary && (
