@@ -1,0 +1,113 @@
+.translator-page {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.translator-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.translator-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0 #ddd;
+    letter-spacing: 2px;
+}
+
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.result-label {
+    font-size: 1.25rem;
+    color: #666;
+    margin: 0;
+}
+
+.result-text {
+    font-family: "ObfuscatedFont", sans-serif;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: #1a1a1a;
+    padding: 24px 32px;
+    border: 3px solid #1a1a1a;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    background: #fff;
+    box-shadow: 4px 4px 0 #1a1a1a;
+    text-align: center;
+    word-break: break-word;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button {
+    padding: 14px 48px;
+    font-size: 1.25rem;
+    font-family: inherit;
+    color: #fff;
+    background: #1a1a1a;
+    border: 3px solid #1a1a1a;
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #888;
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: #333;
+    box-shadow: 6px 6px 0 #666;
+    transform: translate(-2px, -2px);
+}
+
+.back-button:active {
+    box-shadow: 2px 2px 0 #888;
+    transform: translate(2px, 2px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .translator-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .result-text {
+        padding: 20px 24px;
+        font-size: 1.5rem;
+    }
+
+    .back-button {
+        padding: 12px 36px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-text {
+        padding: 16px 20px;
+        font-size: 1.25rem;
+    }
+
+    .back-button {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+}
