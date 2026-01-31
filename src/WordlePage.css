@@ -338,6 +338,12 @@
     font-weight: bold;
 }
 
+.secret-word-normal {
+    font-family: "NormalFont", sans-serif;
+    font-weight: bold;
+    color: #666;
+}
+
 .play-again-button {
     font-family: "NormalFont", sans-serif;
     padding: 10px 24px;

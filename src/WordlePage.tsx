@@ -322,6 +322,8 @@ function WordlePage() {
                                     <p className="lose-message">
                                         The word was:{" "}
                                         <span className="secret-word">{secretWord}</span>
+                                        {" "}
+                                        <span className="secret-word-normal">({secretWord})</span>
                                     </p>
                                 )}
                                 <button className="play-again-button" onClick={resetGame}>
