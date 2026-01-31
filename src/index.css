@@ -6,7 +6,7 @@
 }
 
 :root {
-  font-family: 'Gloria Hallelujah', 'Architects Daughter', cursive, system-ui;
+  font-family: "NormalFont";
   line-height: 1.5;
   font-weight: 400;
 
@@ -28,4 +28,11 @@ body {
 #root {
   width: 100%;
   min-height: 100vh;
+}
+
+@font-face {
+  font-family: "NormalFont";
+  src: url("./assets/Normal_font-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
