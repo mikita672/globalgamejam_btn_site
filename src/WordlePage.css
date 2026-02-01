@@ -558,6 +558,7 @@
     .dictionary-popup {
         max-width: 1200px;
         width: 95%;
+        max-height: 95vh;
         padding: 35px;
     }
 
