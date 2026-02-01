@@ -643,9 +643,7 @@
   }
 
   .bush-2 {
-    width: 150px;
-    left: -5%;
-    bottom: -10%;
+    display: none;
   }
 
   .tree-1 {
@@ -653,6 +651,6 @@
   }
 
   .tree-2 {
-    width: 300px;
+    display: none;
   }
 }
