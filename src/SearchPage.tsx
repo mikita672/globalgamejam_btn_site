@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./SearchPage.css";
 
 import tree1 from "./assets/Tree1.png";
@@ -14,12 +14,14 @@ import mask3 from "./assets/Mask_recharge_3.png";
 import mask4 from "./assets/Mask_recharge_4.png";
 import mask5 from "./assets/Mask_recharge_5.png";
 
+import alphabetIcon from "./assets/alphabet.png";
+import translateIcon from "./assets/translate.png";
+
 const maskFrames = [mask1, mask2, mask3, mask4, mask5];
 
 function SearchPage() {
-    const [searchQuery, setSearchQuery] = useState("");
     const [maskFrame, setMaskFrame] = useState(0);
-    const navigate = useNavigate();
+    const [isFocused, setIsFocused] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -27,13 +29,6 @@ function SearchPage() {
         }, 250);
         return () => clearInterval(interval);
     }, []);
-
-    const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (searchQuery.trim()) {
-            navigate(`/translate?text=${encodeURIComponent(searchQuery)}`);
-        }
-    };
 
     return (
         <div className="search-page">
@@ -47,24 +42,33 @@ function SearchPage() {
             <div className="search-content">
                 <h1 className="search-title">Maskoogle</h1>
 
-                <form className="search-form" onSubmit={handleSubmit}>
-                    <div className="search-input-wrapper">
-                        <img src={tree3} alt="" className="search-tree-3" />
-                        <div className="mask-character">
-                            <img src={maskFrames[maskFrame]} alt="Mask character" />
-                        </div>
-                        <input
-                            type="text"
-                            className="search-input"
-                            placeholder="Search for something..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
+                <div className="search-input-wrapper">
+                    <img src={tree3} alt="" className="search-tree-3" />
+                    <div className="mask-character">
+                        <img src={maskFrames[maskFrame]} alt="Mask character" />
                     </div>
-                    <button type="submit" className="search-button">
-                        Search
-                    </button>
-                </form>
+                    <input
+                        type="text"
+                        className="search-input"
+                        placeholder="Search for something..."
+                        readOnly
+                        onFocus={() => setIsFocused(true)}
+                        onBlur={() => setTimeout(() => setIsFocused(false), 150)}
+                    />
+
+                    {isFocused && (
+                        <div className="search-suggestions">
+                            <Link to="/maskle" className="suggestion-item">
+                                <img src={alphabetIcon} alt="" className="suggestion-icon" />
+                                <span className="suggestion-text">Maskle</span>
+                            </Link>
+                            <Link to="/translate" className="suggestion-item">
+                                <img src={translateIcon} alt="" className="suggestion-icon" />
+                                <span className="suggestion-text">Mask Translator</span>
+                            </Link>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );
