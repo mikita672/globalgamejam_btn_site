@@ -502,21 +502,21 @@
 .tree-2 {
   bottom: -4%;
   right: -5%;
-  width: 400px;
+  width: 500px;
   transform: rotate(8deg);
 }
 
 .bush-1 {
-  bottom: -10%;
-  left: 50%;
-  width: 300px;
+  bottom: -15%;
+  left: 30%;
+  width: 350px;
   transform: rotate(3deg);
 }
 
 .bush-2 {
-  bottom: -12%;
+  bottom: -17%;
   right: 15%;
-  width: 250px;
+  width: 400px;
   transform: rotate(-4deg);
 }
 
@@ -645,7 +645,7 @@
   .bush-2 {
     width: 150px;
     left: -5%;
-    bottom: -7%;
+    bottom: -10%;
   }
 
   .tree-1 {
