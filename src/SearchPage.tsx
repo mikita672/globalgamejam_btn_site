@@ -37,11 +37,11 @@ function SearchPage() {
 
     return (
         <div className="search-page">
-            <div className="decorative-elements">
-                <img src={tree1} alt="" className="decorative-element tree-1" />
-                <img src={tree2} alt="" className="decorative-element tree-2" />
-                <img src={bush1} alt="" className="decorative-element bush-1" />
-                <img src={bush2} alt="" className="decorative-element bush-2" />
+            <div className="search-decorative-elements">
+                <img src={tree1} alt="" className="search-decorative-element search-tree-1" />
+                <img src={tree2} alt="" className="search-decorative-element search-tree-2" />
+                <img src={bush1} alt="" className="search-decorative-element search-bush-1" />
+                <img src={bush2} alt="" className="search-decorative-element search-bush-2" />
             </div>
 
             <div className="search-content">
@@ -49,7 +49,7 @@ function SearchPage() {
 
                 <form className="search-form" onSubmit={handleSubmit}>
                     <div className="search-input-wrapper">
-                        <img src={tree3} alt="" className="tree-3" />
+                        <img src={tree3} alt="" className="search-tree-3" />
                         <div className="mask-character">
                             <img src={maskFrames[maskFrame]} alt="Mask character" />
                         </div>

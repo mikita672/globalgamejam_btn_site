@@ -103,34 +103,34 @@
   transform: translate(2px, 2px);
 }
 
-.decorative-elements {
+.search-decorative-elements {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 1;
 }
 
-.decorative-element {
+.search-decorative-element {
   position: absolute;
   filter: grayscale(100%) contrast(1.2);
   opacity: 0.9;
 }
 
-.tree-1 {
+.search-tree-1 {
   bottom: 0;
   left: -2%;
   width: clamp(150px, 20vw, 300px);
   transform: rotate(-5deg);
 }
 
-.tree-2 {
+.search-tree-2 {
   bottom: 0;
   right: 5%;
   width: clamp(120px, 18vw, 280px);
   transform: rotate(8deg);
 }
 
-.tree-3 {
+.search-tree-3 {
   position: absolute;
   top: 86%;
   left: 10%;
@@ -140,14 +140,14 @@
   pointer-events: none;
 }
 
-.bush-1 {
+.search-bush-1 {
   bottom: 0;
   left: 15%;
   width: clamp(100px, 15vw, 220px);
   transform: rotate(3deg);
 }
 
-.bush-2 {
+.search-bush-2 {
   bottom: 0;
   right: 15%;
   width: clamp(90px, 14vw, 200px);
@@ -173,27 +173,27 @@
     font-size: 1rem;
   }
 
-  .tree-1 {
+  .search-tree-1 {
     bottom: -5%;
     width: 250px;
   }
 
-  .tree-2 {
+  .search-tree-2 {
     right: -5%;
     width: 250px;
   }
 
-  .tree-3 {
+  .search-tree-3 {
     display: none;
   }
 
-  .bush-1 {
+  .search-bush-1 {
     left: 10%;
     bottom: -12%;
     width: 200px;
   }
 
-  .bush-2 {
+  .search-bush-2 {
     bottom: -10%;
     right: 10%;
     width: 200px;
@@ -233,28 +233,28 @@
     font-size: 1rem;
   }
 
-  .tree-1 {
+  .search-tree-1 {
     bottom: -5%;
     width: 250px;
   }
 
-  .tree-2 {
+  .search-tree-2 {
     right: -12%;
     width: 300px;
     bottom: -5%;
   }
 
-  .tree-3 {
+  .search-tree-3 {
     display: none;
   }
 
-  .bush-1 {
+  .search-bush-1 {
     left: -10%;
     bottom: -12%;
     width: 200px;
   }
 
-  .bush-2 {
+  .search-bush-2 {
     bottom: -10%;
     right: -15%;
     width: 200px;
@@ -274,21 +274,21 @@
     filter: grayscale(100%) contrast(1.2);
   }
 
-  .bush-1 {
+  .search-bush-1 {
     width: 200px;
     left: 60%;
     bottom: -10%;
   }
 
-  .bush-2 {
+  .search-bush-2 {
     display: none;
   }
 
-  .tree-1 {
+  .search-tree-1 {
     width: 200px;
   }
 
-  .tree-2 {
+  .search-tree-2 {
     display: none;
   }
 }
