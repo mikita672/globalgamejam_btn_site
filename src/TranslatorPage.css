@@ -36,14 +36,28 @@
     filter: grayscale(100%) contrast(1.2);
 }
 
+.translator-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 900px) {
+    .translator-boxes {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
 .translator-input-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 2rem;
+    flex: 1;
 }
 
 .translator-label {
@@ -63,10 +77,11 @@
     color: #1a1a1a;
     outline: none;
     box-shadow: 4px 4px 0 #1a1a1a;
-    resize: vertical;
-    min-height: 100px;
+    resize: none;
+    height: 200px;
     box-sizing: border-box;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
+    overflow-y: auto;
 }
 
 .translator-input:focus {
@@ -82,11 +97,9 @@
 .result-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 2rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex: 1;
 }
 
 .result-label {
@@ -98,21 +111,19 @@
 
 .result-text {
     font-family: "ObfuscatedFont", sans-serif;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     color: #1a1a1a;
-    padding: 24px 32px;
+    padding: 18px 24px;
     border: 3px solid #1a1a1a;
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     background: #fff;
     box-shadow: 4px 4px 0 #1a1a1a;
-    text-align: center;
+    text-align: left;
     word-break: break-word;
-    min-height: 60px;
+    height: 200px;
     width: 100%;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow-y: auto;
 }
 
 .translator-back-button {

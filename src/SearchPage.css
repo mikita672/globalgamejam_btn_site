@@ -57,7 +57,7 @@
   color: #888;
   outline: none;
   box-shadow: 4px 4px 0 #1a1a1a;
-  cursor: not-allowed;
+  cursor: pointer;
   box-sizing: border-box;
 }
 
@@ -66,7 +66,6 @@
   font-style: italic;
 }
 
-/* Search Suggestions Dropdown */
 .search-suggestions {
   position: absolute;
   top: calc(100% + 8px);

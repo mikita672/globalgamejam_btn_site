@@ -47,23 +47,23 @@ function TranslatorPage() {
           <img src={maskFrames[maskFrame]} alt="Mask character" />
         </div>
 
-        <div className="translator-input-section">
-          <label className="translator-label">Enter text to translate:</label>
-          <textarea
-            className="translator-input"
-            placeholder="Type something here..."
-            value={inputText}
-            onChange={(e) => setInputText(e.target.value)}
-            rows={3}
-          />
-        </div>
+        <div className="translator-boxes">
+          <div className="translator-input-section">
+            <label className="translator-label">Enter text to translate:</label>
+            <textarea
+              className="translator-input"
+              placeholder="Type something here..."
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              rows={5}
+            />
+          </div>
 
-        {inputText && (
           <div className="result-container">
             <p className="result-label">Translation:</p>
-            <div className="result-text">{inputText}</div>
+            <div className="result-text">{inputText || "Translation"}</div>
           </div>
-        )}
+        </div>
 
         <button className="translator-back-button" onClick={handleBack}>
           ← Back to Home
