@@ -1,301 +1,313 @@
 .memo-page {
-    height: 100vh;
-    width: 100%;
-    background-color: #fff;
-    position: relative;
-    overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .memo-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    position: relative;
-    z-index: 10;
-    padding: 1vh 10px 2vh;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+  padding: 1vh 10px 2vh;
+  box-sizing: border-box;
 }
 
 .memo-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .memo-title {
-    font-size: clamp(1.2rem, 3vh, 2.5rem);
-    color: #1a1a1a;
-    margin: 0;
-    text-shadow: 2px 2px 0 #ddd;
-    letter-spacing: 2px;
+  font-size: clamp(1.2rem, 3vh, 2.5rem);
+  color: #1a1a1a;
+  margin: 0;
+  text-shadow: 2px 2px 0 #ddd;
+  letter-spacing: 2px;
 }
 
 .memo-mask-character {
-    margin: 0.5vh 0;
+  margin: 0.5vh 0;
 }
 
 .memo-mask-character img {
-    height: 15vh;
-    width: auto;
-    padding: 0%;
-    filter: grayscale(100%) contrast(1.2);
+  height: 15vh;
+  width: auto;
+  padding: 0%;
+  filter: grayscale(100%) contrast(1.2);
 }
 
 .memo-stats {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1vh;
-    font-family: "NormalFont", sans-serif;
-    font-size: clamp(0.8rem, 1.5vh, 1rem);
-    color: #1a1a1a;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1vh;
+  font-family: "NormalFont", sans-serif;
+  font-size: clamp(0.8rem, 1.5vh, 1rem);
+  color: #1a1a1a;
 }
 
 .memo-stat {
-    padding: 0.5vh 1rem;
-    background: #fff;
-    border: 2px solid #1a1a1a;
-    border-radius: 8px 3px 8px 3px / 3px 8px 3px 8px;
-    box-shadow: 2px 2px 0 #1a1a1a;
+  padding: 0.5vh 1rem;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 8px 3px 8px 3px / 3px 8px 3px 8px;
+  box-shadow: 2px 2px 0 #1a1a1a;
 }
 
 .memo-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: min(1.2vh, 10px);
-    width: min(90vw, 55vh);
-    flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: min(1.2vh, 10px);
+  width: min(90vw, 55vh);
+  flex-shrink: 0;
 }
 
 .memo-card {
-    aspect-ratio: 1;
-    cursor: pointer;
-    perspective: 1000px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  perspective: 1000px;
 }
 
 .memo-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.4s ease;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
 }
 
 .memo-card.flipped .memo-card-inner,
 .memo-card.matched .memo-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .memo-card-front,
 .memo-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #1a1a1a;
-    border-radius: 15px 5px 15px 5px / 5px 15px 5px 15px;
-    box-shadow: 2px 2px 0 #1a1a1a;
-    font-size: clamp(1rem, 2.5vh, 2rem);
-    font-weight: bold;
-    box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px 5px 15px 5px / 5px 15px 5px 15px;
+  box-shadow: 2px 2px 0 #1a1a1a;
+  font-size: clamp(2rem, 2.5vh, 3rem);
+  font-weight: bold;
+  box-sizing: border-box;
 }
 
 .memo-card-back {
-    background: #1a1a1a;
-    color: #fff;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .memo-card-front {
-    background: #fff;
-    color: #1a1a1a;
-    transform: rotateY(180deg);
+  background: #fff;
+  color: #1a1a1a;
+  transform: rotateY(180deg);
 }
 
 .memo-card-front.normal {
-    font-family: "NormalFont", sans-serif;
+  font-family: "NormalFont", sans-serif;
 }
 
 .memo-card-front.obfuscated {
-    font-family: "ObfuscatedFont", sans-serif;
+  font-family: "ObfuscatedFont", sans-serif;
 }
 
 .memo-card.matched .memo-card-front {
-    background: #6aaa64;
-    color: #fff;
-    border-color: #538d4e;
+  background: #6aaa64;
+  color: #fff;
+  border-color: #538d4e;
 }
 
 .memo-card.matched {
-    cursor: default;
+  cursor: default;
 }
 
 .memo-win-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8vh;
-    padding: 1.5vh 2rem;
-    background: #fff;
-    border: 3px solid #1a1a1a;
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-    box-shadow: 4px 4px 0 #1a1a1a;
-    font-family: "NormalFont", sans-serif;
-    font-size: clamp(0.9rem, 1.8vh, 1.2rem);
-    color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8vh;
+  padding: 1.5vh 2rem;
+  background: #fff;
+  border: 3px solid #1a1a1a;
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  font-family: "NormalFont", sans-serif;
+  font-size: clamp(0.9rem, 1.8vh, 1.2rem);
+  color: #1a1a1a;
 }
 
 .memo-win-message p {
-    margin: 0;
+  margin: 0;
 }
 
 .memo-play-again {
-    padding: 1vh 2rem;
-    font-size: clamp(0.8rem, 1.5vh, 1rem);
-    font-family: "NormalFont", sans-serif;
-    color: #fff;
-    background: #6aaa64;
-    border: 3px solid #538d4e;
-    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
-    cursor: pointer;
-    box-shadow: 3px 3px 0 #3a5c3a;
-    transition: all 0.2s ease;
+  padding: 1vh 2rem;
+  font-size: clamp(0.8rem, 1.5vh, 1rem);
+  font-family: "NormalFont", sans-serif;
+  color: #fff;
+  background: #6aaa64;
+  border: 3px solid #538d4e;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #3a5c3a;
+  transition: all 0.2s ease;
 }
 
 .memo-play-again:hover {
-    background: #538d4e;
-    box-shadow: 5px 5px 0 #3a5c3a;
-    transform: translate(-2px, -2px);
+  background: #538d4e;
+  box-shadow: 5px 5px 0 #3a5c3a;
+  transform: translate(-2px, -2px);
 }
 
 .memo-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .memo-reset-button,
 .memo-back-button {
-    padding: 1vh 1.5rem;
-    font-size: clamp(0.8rem, 1.5vh, 1rem);
-    font-family: "NormalFont", sans-serif;
-    color: #fff;
-    background: #1a1a1a;
-    border: 3px solid #1a1a1a;
-    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
-    cursor: pointer;
-    box-shadow: 4px 4px 0 #888;
-    transition: all 0.2s ease;
+  padding: 1vh 1.5rem;
+  font-size: clamp(0.8rem, 1.5vh, 1rem);
+  font-family: "NormalFont", sans-serif;
+  color: #fff;
+  background: #1a1a1a;
+  border: 3px solid #1a1a1a;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #888;
+  transition: all 0.2s ease;
 }
 
 .memo-reset-button:hover,
 .memo-back-button:hover {
-    background: #333;
-    box-shadow: 6px 6px 0 #666;
-    transform: translate(-2px, -2px);
+  background: #333;
+  box-shadow: 6px 6px 0 #666;
+  transform: translate(-2px, -2px);
 }
 
 .memo-reset-button:active,
 .memo-back-button:active {
-    box-shadow: 2px 2px 0 #888;
-    transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #888;
+  transform: translate(2px, 2px);
 }
 
 .memo-decorative-elements {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .memo-decorative-element {
-    position: absolute;
-    filter: grayscale(100%) contrast(1.2);
-    opacity: 0.9;
+  position: absolute;
+  filter: grayscale(100%) contrast(1.2);
+  opacity: 0.9;
 }
 
 .memo-tree-1 {
-    bottom: -4%;
-    left: 0;
-    width: 250px;
-    transform: rotate(-5deg);
+  bottom: -4%;
+  left: 0;
+  width: 250px;
+  transform: rotate(-5deg);
 }
 
 .memo-tree-2 {
-    bottom: -4%;
-    right: -5%;
-    width: 500px;
-    transform: rotate(8deg);
+  bottom: -4%;
+  right: -5%;
+  width: 500px;
+  transform: rotate(8deg);
 }
 
 .memo-bush-1 {
-    bottom: -15%;
-    left: 40%;
-    width: 350px;
-    transform: rotate(3deg);
+  bottom: -15%;
+  left: 40%;
+  width: 350px;
+  transform: rotate(3deg);
 }
 
 .memo-bush-2 {
-    bottom: -17%;
-    right: 15%;
-    width: 400px;
-    transform: rotate(-4deg);
+  bottom: -17%;
+  right: 15%;
+  width: 400px;
+  transform: rotate(-4deg);
 }
 
+.memo-painting-1 {
+  width: 200px;
+  bottom: 25%;
+  transform: rotate(-15deg);
+  left: 3%;
+}
+
+.memo-painting-2 {
+  width: 400px;
+  right: 0%;
+  bottom: 65%;
+}
 
 @media (min-height: 800px) {
-    .memo-grid {
-        width: min(85vw, 60vh);
-        gap: min(1.5vh, 15px);
-    }
+  .memo-grid {
+    width: min(85vw, 60vh);
+    gap: min(1.5vh, 15px);
+  }
 
-    .memo-card-front,
-    .memo-card-back {
-        border-width: 3px;
-        box-shadow: 3px 3px 0 #1a1a1a;
-    }
+  .memo-card-front,
+  .memo-card-back {
+    border-width: 3px;
+    box-shadow: 3px 3px 0 #1a1a1a;
+  }
 }
 
-/* Mobile screens */
 @media (max-width: 480px) {
-    .memo-content {
-        padding-top: 60px;
-    }
+  .memo-content {
+    padding-top: 60px;
+  }
 
-    .memo-grid {
-        grid-template-columns: repeat(4, 1fr);
-        width: min(95vw, 70vh);
-    }
+  .memo-grid {
+    grid-template-columns: repeat(4, 1fr);
+    width: min(95vw, 70vh);
+  }
 
-    .memo-buttons {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .memo-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    .memo-tree-1,
-    .memo-tree-2,
-    .memo-bush-1,
-    .memo-bush-2 {
-        display: none;
-    }
+  .memo-tree-1,
+  .memo-tree-2,
+  .memo-bush-1,
+  .memo-bush-2,
+  .memo-painting-1,
+  .memo-painting-2 {
+    display: none;
+  }
 }
 
-/* Very short screens (like laptops) */
 @media (max-height: 700px) {
-    .memo-mask-character img {
-        height: 5vh;
-    }
+  .memo-mask-character img {
+    height: 5vh;
+  }
 
-    .memo-grid {
-        width: min(80vw, 50vh);
-        gap: min(0.8vh, 6px);
-    }
+  .memo-grid {
+    width: min(80vw, 50vh);
+    gap: min(0.8vh, 6px);
+  }
 
-    .memo-stat {
-        padding: 0.3vh 0.8rem;
-    }
+  .memo-stat {
+    padding: 0.3vh 0.8rem;
+  }
 }
