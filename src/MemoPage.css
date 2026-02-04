@@ -1,52 +1,59 @@
 .memo-page {
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     background-color: #fff;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .memo-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
+    justify-content: space-between;
+    height: 100vh;
     position: relative;
     z-index: 10;
-    padding: 10px;
-    padding-top: 15px;
+    padding: 1vh 10px 2vh;
     box-sizing: border-box;
 }
 
+.memo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .memo-title {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(1.2rem, 3vh, 2.5rem);
     color: #1a1a1a;
-    margin-bottom: 0.5rem;
+    margin: 0;
     text-shadow: 2px 2px 0 #ddd;
     letter-spacing: 2px;
 }
 
 .memo-mask-character {
-    margin-bottom: 0.5rem;
+    margin: 0.5vh 0;
 }
 
 .memo-mask-character img {
-    width: 80px;
+    height: 15vh;
+    width: auto;
+    padding: 0%;
     filter: grayscale(100%) contrast(1.2);
 }
 
 .memo-stats {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1vh;
     font-family: "NormalFont", sans-serif;
-    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 1.5vh, 1rem);
     color: #1a1a1a;
 }
 
 .memo-stat {
-    padding: 8px 16px;
+    padding: 0.5vh 1rem;
     background: #fff;
     border: 2px solid #1a1a1a;
     border-radius: 8px 3px 8px 3px / 3px 8px 3px 8px;
@@ -56,10 +63,9 @@
 .memo-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    max-width: 500px;
-    width: 100%;
-    margin-bottom: 1.5rem;
+    gap: min(1.2vh, 10px);
+    width: min(90vw, 55vh);
+    flex-shrink: 0;
 }
 
 .memo-card {
@@ -90,10 +96,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #1a1a1a;
+    border: 2px solid #1a1a1a;
     border-radius: 15px 5px 15px 5px / 5px 15px 5px 15px;
-    box-shadow: 3px 3px 0 #1a1a1a;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow: 2px 2px 0 #1a1a1a;
+    font-size: clamp(1rem, 2.5vh, 2rem);
     font-weight: bold;
     box-sizing: border-box;
 }
@@ -131,15 +137,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 20px 30px;
+    gap: 0.8vh;
+    padding: 1.5vh 2rem;
     background: #fff;
     border: 3px solid #1a1a1a;
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     box-shadow: 4px 4px 0 #1a1a1a;
-    margin-bottom: 1.5rem;
     font-family: "NormalFont", sans-serif;
-    font-size: 1.3rem;
+    font-size: clamp(0.9rem, 1.8vh, 1.2rem);
     color: #1a1a1a;
 }
 
@@ -148,8 +153,8 @@
 }
 
 .memo-play-again {
-    padding: 12px 28px;
-    font-size: 1rem;
+    padding: 1vh 2rem;
+    font-size: clamp(0.8rem, 1.5vh, 1rem);
     font-family: "NormalFont", sans-serif;
     color: #fff;
     background: #6aaa64;
@@ -175,8 +180,8 @@
 
 .memo-reset-button,
 .memo-back-button {
-    padding: 12px 28px;
-    font-size: 1rem;
+    padding: 1vh 1.5rem;
+    font-size: clamp(0.8rem, 1.5vh, 1rem);
     font-family: "NormalFont", sans-serif;
     color: #fff;
     background: #1a1a1a;
@@ -214,87 +219,61 @@
 }
 
 .memo-tree-1 {
-    bottom: 0;
-    left: -2%;
-    width: clamp(100px, 12vw, 180px);
+    bottom: -4%;
+    left: 0;
+    width: 250px;
     transform: rotate(-5deg);
 }
 
 .memo-tree-2 {
-    bottom: 0;
-    right: 5%;
-    width: clamp(80px, 10vw, 150px);
+    bottom: -4%;
+    right: -5%;
+    width: 500px;
     transform: rotate(8deg);
 }
 
 .memo-bush-1 {
-    bottom: 0;
-    left: 15%;
-    width: clamp(60px, 8vw, 120px);
+    bottom: -15%;
+    left: 40%;
+    width: 350px;
     transform: rotate(3deg);
 }
 
 .memo-bush-2 {
-    bottom: 0;
+    bottom: -17%;
     right: 15%;
-    width: clamp(50px, 7vw, 100px);
+    width: 400px;
     transform: rotate(-4deg);
 }
 
-@media (min-width: 900px) {
-    .memo-title {
-        font-size: 3rem;
-    }
 
-    .memo-mask-character img {
-        width: 100px;
-    }
-
+@media (min-height: 800px) {
     .memo-grid {
-        max-width: 600px;
-        gap: 15px;
+        width: min(85vw, 60vh);
+        gap: min(1.5vh, 15px);
     }
 
     .memo-card-front,
     .memo-card-back {
-        font-size: 2.5rem;
+        border-width: 3px;
+        box-shadow: 3px 3px 0 #1a1a1a;
     }
 }
 
+/* Mobile screens */
 @media (max-width: 480px) {
     .memo-content {
-        padding: 10px;
         padding-top: 60px;
     }
 
     .memo-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 8px;
-    }
-
-    .memo-stats {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .memo-stat {
-        padding: 6px 12px;
-    }
-
-    .memo-card-front,
-    .memo-card-back {
-        font-size: 1.3rem;
-        border-width: 2px;
+        width: min(95vw, 70vh);
     }
 
     .memo-buttons {
         flex-direction: column;
-    }
-
-    .memo-reset-button,
-    .memo-back-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        gap: 0.5rem;
     }
 
     .memo-tree-1,
@@ -302,5 +281,21 @@
     .memo-bush-1,
     .memo-bush-2 {
         display: none;
+    }
+}
+
+/* Very short screens (like laptops) */
+@media (max-height: 700px) {
+    .memo-mask-character img {
+        height: 5vh;
+    }
+
+    .memo-grid {
+        width: min(80vw, 50vh);
+        gap: min(0.8vh, 6px);
+    }
+
+    .memo-stat {
+        padding: 0.3vh 0.8rem;
     }
 }

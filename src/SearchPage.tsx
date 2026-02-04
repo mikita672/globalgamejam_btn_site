@@ -16,6 +16,7 @@ import mask5 from "./assets/Mask_recharge_5.png";
 
 import alphabetIcon from "./assets/alphabet.png";
 import translateIcon from "./assets/translate.png";
+import memoIcon from "./assets/playing-cards.png"
 
 const maskFrames = [mask1, mask2, mask3, mask4, mask5];
 
@@ -67,7 +68,7 @@ function SearchPage() {
                                 <span className="suggestion-text">Mask Translator</span>
                             </Link>
                             <Link to="/memo" className="suggestion-item">
-                                <span className="suggestion-icon-emoji">🃏</span>
+                                <img src={memoIcon} alt="" className="suggestion-icon" />
                                 <span className="suggestion-text">Mask Memo</span>
                             </Link>
                         </div>
