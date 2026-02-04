@@ -66,6 +66,10 @@ function SearchPage() {
                                 <img src={translateIcon} alt="" className="suggestion-icon" />
                                 <span className="suggestion-text">Mask Translator</span>
                             </Link>
+                            <Link to="/memo" className="suggestion-item">
+                                <span className="suggestion-icon-emoji">🃏</span>
+                                <span className="suggestion-text">Mask Memo</span>
+                            </Link>
                         </div>
                     )}
                 </div>

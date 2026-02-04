@@ -8,7 +8,7 @@ import tree1 from "./assets/Tree1.png";
 import tree2 from "./assets/Tree3.png";
 import bush1 from "./assets/Bush_1.png";
 import bush2 from "./assets/Bush_2.png";
-import bookIcon from "./assets/book.png";
+import Dictionary from "./Dictionary";
 import mask1 from "./assets/Mask_recharge_1.png";
 import mask2 from "./assets/Mask_recharge_2.png";
 import mask3 from "./assets/Mask_recharge_3.png";
@@ -26,8 +26,6 @@ const KEYBOARD_ROWS = [
   ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
   ["ENTER", "Z", "X", "C", "V", "B", "N", "M", "⌫"],
 ];
-
-const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 type LetterState = "correct" | "present" | "absent" | "empty";
 
@@ -60,7 +58,6 @@ function WordlePage() {
   const navigate = useNavigate();
   const [secretWord, setSecretWord] = useState<string>("");
   const [loading, setLoading] = useState(true);
-  const [showDictionary, setShowDictionary] = useState(false);
   const [guesses, setGuesses] = useState<TileData[][]>(
     Array(MAX_GUESSES)
       .fill(null)
@@ -238,44 +235,7 @@ function WordlePage() {
 
   return (
     <div className="wordle-page">
-      <button
-        className="dictionary-button"
-        onClick={() => setShowDictionary(true)}
-        title="Dictionary"
-      >
-        <img src={bookIcon} alt="Dictionary" className="dictionary-icon" />
-      </button>
-
-      {showDictionary && (
-        <div
-          className="dictionary-overlay"
-          onClick={() => setShowDictionary(false)}
-        >
-          <div
-            className="dictionary-popup"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="dictionary-header">
-              <h2 className="dictionary-title">Dictionary</h2>
-              <button
-                className="dictionary-close"
-                onClick={() => setShowDictionary(false)}
-              >
-                ✕
-              </button>
-            </div>
-            <div className="dictionary-grid">
-              {ALPHABET.map((letter) => (
-                <div key={letter} className="dictionary-item">
-                  <span className="dict-normal">{letter}</span>
-                  <span className="dict-arrow">→</span>
-                  <span className="dict-obfuscated">{letter}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+      <Dictionary />
 
       <div className="decorative-elements">
         <img src={tree1} alt="" className="decorative-element tree-1" />
@@ -301,11 +261,10 @@ function WordlePage() {
                   {row.map((tile, colIndex) => (
                     <div
                       key={colIndex}
-                      className={`tile ${tile.state} ${
-                        rowIndex === currentRow && colIndex === currentCol
+                      className={`tile ${tile.state} ${rowIndex === currentRow && colIndex === currentCol
                           ? "current"
                           : ""
-                      }`}
+                        }`}
                     >
                       {tile.letter}
                     </div>
@@ -321,9 +280,8 @@ function WordlePage() {
                 {row.map((key) => (
                   <button
                     key={key}
-                    className={`key ${keyboardColors[key] || ""} ${
-                      key === "ENTER" || key === "⌫" ? "wide-key" : ""
-                    }`}
+                    className={`key ${keyboardColors[key] || ""} ${key === "ENTER" || key === "⌫" ? "wide-key" : ""
+                      }`}
                     onClick={() => handleKeyPress(key)}
                   >
                     {key}

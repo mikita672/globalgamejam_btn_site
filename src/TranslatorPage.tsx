@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TranslatorPage.css";
+import Dictionary from "./Dictionary";
 
 import tree1 from "./assets/Tree1.png";
 import tree2 from "./assets/Tree3.png";
@@ -33,6 +34,8 @@ function TranslatorPage() {
 
   return (
     <div className="translator-page">
+      <Dictionary />
+
       <div className="translator-decorative-elements">
         <img src={tree1} alt="" className="translator-decorative-element translator-tree-1" />
         <img src={tree2} alt="" className="translator-decorative-element translator-tree-2" />
